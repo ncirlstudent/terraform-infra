@@ -70,7 +70,6 @@ pipeline {
                 script {
                     
                     sh 'terraform init'
-                    sh 'terraform workspace select ${TF_VAR_branch_name} || terraform workspace new ${TF_VAR_branch_name}'
                 }
             }
         }

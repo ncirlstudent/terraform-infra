@@ -1,9 +1,9 @@
 locals {
   aws_region    = data.aws_region.current_region.name
-  ec2_instances = yamldecode(file("${path.module}/configuration/${terraform.workspace}/ec2.yaml"))
+  ec2_instances = yamldecode(file("${path.module}/configuration/ec2.yaml"))
 
 
-  ec2_sg = tolist(fileset(path.root, "configuration/${terraform.workspace}/sg.yaml"))
+  ec2_sg = tolist(fileset(path.root, "configuration/sg.yaml"))
   ec2_sg_config = {
     for element in local.ec2_sg :
     yamldecode(file("${path.root}/${element}"))["name"] => yamldecode(file("${path.root}/${element}"))

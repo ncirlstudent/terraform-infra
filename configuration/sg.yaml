@@ -1,0 +1,27 @@
+name: instance1-sg
+vpc_id : vpc-0c735787e36a3c094
+sg_inbound:
+
+    -
+      from_port: 80
+      to_port: 80
+      protocol: "tcp"
+      cidr_blocks:
+        - 0.0.0.0/0
+      description: "Allow HTTP"
+    -
+      from_port: 443
+      to_port: 443
+      protocol: "tcp"
+      cidr_blocks:
+        - 0.0.0.0/0
+      description: "Allow HTTPS"
+ 
+sg_outbound:
+    -
+      from_port: 0
+      to_port: 0
+      protocol: "-1"
+      cidr_blocks: 
+        - 0.0.0.0/0
+      description: "Allow all the outbound traffic "

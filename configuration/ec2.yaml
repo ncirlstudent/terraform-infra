@@ -1,0 +1,10 @@
+instance_1:
+  system :
+    instance_type : t2.micro
+    ami_name      : amzn2-ami-kernel-5.10-hvm-2.0.20231206.0-x86_64-gp2
+    ami_owner     : amazon
+    keypair_name  : instance1_keypair
+  network:
+    vpc_id : vpc-0c735787e36a3c094
+    subnet_id : subnet-0e78ac25b5142713d
+    security_group  : instance1-sg
